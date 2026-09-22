@@ -29,6 +29,7 @@ struct MediaCarousel: View {
                 .padding(.horizontal, 16)
             }
         }
+        .containerRelativeFrame(.horizontal, alignment: .leading)
     }
 }
 

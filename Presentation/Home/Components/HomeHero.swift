@@ -10,9 +10,6 @@ struct HomeHero: View {
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(height: 415)
-                    .clipped()
-                    .frame(maxWidth: .infinity)
-                    .clipped()
                     .overlay(
                         LinearGradient(
                             colors: [.black.opacity(0.45), .clear, .black],
@@ -62,6 +59,9 @@ struct HomeHero: View {
                     .padding(.top, 8)
             }
         }
+        .frame(height: 415)
+        .containerRelativeFrame(.horizontal)
+        .clipped()
     }
 }
 

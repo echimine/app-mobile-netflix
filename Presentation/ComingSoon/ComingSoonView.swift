@@ -42,8 +42,8 @@ struct ComingSoonView: View {
             Image(imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(height: 55)
                 .frame(maxWidth: .infinity)
+                .frame(height: 55)
                 .clipShape(RoundedRectangle(cornerRadius: 2, style: .continuous))
 
             Text("New Arrival")
@@ -68,8 +68,7 @@ private struct ComingSoonCard: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(height: 385)
-                .clipped()
-                .frame(maxWidth: .infinity)
+                .containerRelativeFrame(.horizontal)
                 .clipped()
                 .overlay(
                     LinearGradient(
