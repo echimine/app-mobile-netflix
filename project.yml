@@ -14,28 +14,8 @@ targets:
       - path: MyApp.swift
       - path: RootView.swift
       - path: ContentView.swift
-      - path: SplashScreenView.swift
-      - path: Profile.swift
-      - path: ProfileSelectionView.swift
-      - path: MediaItem.swift
-      - path: MediaRowView.swift
-      - path: MediaCarousel.swift
-      - path: HomeHeader.swift
-      - path: HomeHero.swift
-      - path: HomeView.swift
-      - path: SearchResult.swift
-      - path: SearchView.swift
-      - path: MyListItem.swift
-      - path: MyListView.swift
-      - path: DownloadsView.swift
-      - path: MoreView.swift
-      - path: ComingSoonItem.swift
-      - path: ComingSoonView.swift
       - path: MainTabView.swift
-      - path: DesignSystem.swift
-      - path: DesignSystem+Color.swift
-      - path: DesignSystem+Typography.swift
-      - path: PrimaryButtonStyle.swift
+      - path: Presentation
       - path: Assets.xcassets
     info:
       path: Info.plist
