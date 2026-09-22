@@ -2,6 +2,12 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Objectif du projet
+
+Cette app est un clone d'interface Netflix : le but est d'intégrer une maquette Figma et de reproduire fidèlement l'UI/UX de Netflix (écrans, navigation, composants, mise en page, animations d'interface) à partir de cette maquette.
+
+Le scope est volontairement limité à l'implémentation visuelle et structurelle de la maquette — il n'y a pas de vidéo, pas de streaming, pas de lecteur média, et pas de backend de contenu réel. L'objectif est que l'app *ressemble et se comporte* comme Netflix côté interface, pas qu'elle en reproduise les fonctionnalités de diffusion vidéo.
+
 ## Project state
 
 This is a bare-bones SwiftUI iOS app scaffold, currently just the default template:
