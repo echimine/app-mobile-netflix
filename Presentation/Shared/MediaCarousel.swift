@@ -16,17 +16,25 @@ struct MediaCarousel: View {
                 .foregroundStyle(.white)
                 .padding(.horizontal, 16)
 
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 6) {
-                    ForEach(items) { item in
-                        Image(item.imageName)
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 102, height: 102)
-                            .clipShape(Circle())
+            ScrollViewReader { proxy in
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 6) {
+                        ForEach(items) { item in
+                            Image(item.imageName)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 102, height: 102)
+                                .clipShape(Circle())
+                                .id(item.id)
+                        }
+                    }
+                    .padding(.horizontal, 16)
+                }
+                .onAppear {
+                    if let firstID = items.first?.id {
+                        proxy.scrollTo(firstID, anchor: .leading)
                     }
                 }
-                .padding(.horizontal, 16)
             }
         }
     }
