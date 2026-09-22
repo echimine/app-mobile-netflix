@@ -24,6 +24,10 @@ targets:
       - path: SearchView.swift
       - path: MyListItem.swift
       - path: MyListView.swift
+      - path: DownloadsView.swift
+      - path: MoreView.swift
+      - path: ComingSoonItem.swift
+      - path: ComingSoonView.swift
       - path: MainTabView.swift
       - path: DesignSystem.swift
       - path: DesignSystem+Color.swift

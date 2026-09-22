@@ -1,0 +1,13 @@
+{
+  "images" : [
+    {
+      "filename" : "coming-tiny-pretty-things.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
