@@ -19,6 +19,7 @@ targets:
       - path: ProfileSelectionView.swift
       - path: MediaItem.swift
       - path: MediaRowView.swift
+      - path: MediaCarousel.swift
       - path: HomeHeader.swift
       - path: HomeHero.swift
       - path: HomeView.swift

@@ -4,8 +4,20 @@ struct HomeView: View {
     let rows: [MediaRow]
 
     var body: some View {
-        CategoryGridView(rows: rows, showsHeroHeader: true)
-            .toolbar(.hidden, for: .navigationBar)
+        ScrollView {
+            VStack(alignment: .leading, spacing: 24) {
+                HomeHero(showsHeader: true)
+
+                MediaCarousel(title: "Previews", items: MediaCarouselItem.previewsSample)
+
+                ForEach(rows) { row in
+                    MediaRowView(row: row)
+                }
+            }
+            .padding(.bottom, 24)
+        }
+        .background(Color.black.ignoresSafeArea())
+        .toolbar(.hidden, for: .navigationBar)
     }
 }
 
