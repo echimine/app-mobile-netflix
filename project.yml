@@ -17,6 +17,10 @@ targets:
       - path: SplashScreenView.swift
       - path: Profile.swift
       - path: ProfileSelectionView.swift
+      - path: MediaItem.swift
+      - path: MediaRowView.swift
+      - path: HomeView.swift
+      - path: MainTabView.swift
       - path: DesignSystem.swift
       - path: DesignSystem+Color.swift
       - path: DesignSystem+Typography.swift

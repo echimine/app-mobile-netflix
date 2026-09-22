@@ -72,6 +72,18 @@ private struct ProfileTile: View {
     let isEditing: Bool
 
     var body: some View {
+        if isEditing {
+            content
+        } else {
+            NavigationLink {
+                MainTabView()
+            } label: {
+                content
+            }
+        }
+    }
+
+    private var content: some View {
         VStack(spacing: 8) {
             ZStack(alignment: .topTrailing) {
                 Image(profile.imageName)
