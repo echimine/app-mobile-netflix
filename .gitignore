@@ -6,3 +6,9 @@ xcuserdata/
 *.xcuserstate
 DerivedData/
 .build/
+
+# Ruflo
+.claude/
+.claude-flow/
+.swarm/
+ruvector.db
