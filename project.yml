@@ -20,6 +20,8 @@ targets:
       - path: MediaItem.swift
       - path: MediaRowView.swift
       - path: HomeView.swift
+      - path: SearchResult.swift
+      - path: SearchView.swift
       - path: MainTabView.swift
       - path: DesignSystem.swift
       - path: DesignSystem+Color.swift

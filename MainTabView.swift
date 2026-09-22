@@ -10,10 +10,12 @@ struct MainTabView: View {
                 Label("Home", systemImage: "house")
             }
 
-            PlaceholderTabView(title: "Search")
-                .tabItem {
-                    Label("Search", systemImage: "magnifyingglass")
-                }
+            NavigationStack {
+                SearchView(results: SearchResult.topSearches)
+            }
+            .tabItem {
+                Label("Search", systemImage: "magnifyingglass")
+            }
 
             PlaceholderTabView(title: "Coming Soon")
                 .tabItem {
