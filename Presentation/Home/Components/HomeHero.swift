@@ -11,6 +11,8 @@ struct HomeHero: View {
                     .aspectRatio(contentMode: .fill)
                     .frame(height: 415)
                     .clipped()
+                    .frame(maxWidth: .infinity)
+                    .clipped()
                     .overlay(
                         LinearGradient(
                             colors: [.black.opacity(0.45), .clear, .black],
