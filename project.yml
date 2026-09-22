@@ -15,6 +15,8 @@ targets:
       - path: RootView.swift
       - path: ContentView.swift
       - path: SplashScreenView.swift
+      - path: Profile.swift
+      - path: ProfileSelectionView.swift
       - path: DesignSystem.swift
       - path: DesignSystem+Color.swift
       - path: DesignSystem+Typography.swift

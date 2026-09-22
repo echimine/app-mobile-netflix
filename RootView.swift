@@ -5,7 +5,9 @@ struct RootView: View {
 
     var body: some View {
         if isActive {
-            ContentView()
+            NavigationStack {
+                ProfileSelectionView(profiles: Profile.sampleProfiles)
+            }
         } else {
             SplashScreenView()
                 .task {
