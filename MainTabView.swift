@@ -4,7 +4,7 @@ struct MainTabView: View {
     var body: some View {
         TabView {
             NavigationStack {
-                HomeView(rows: MediaRow.sampleRows)
+                HomeView(rows: MovieRow.homeRows)
             }
             .tabItem {
                 Label("Home", systemImage: "house")
@@ -45,4 +45,5 @@ struct MainTabView: View {
 
 #Preview {
     MainTabView()
+        .environment(MyListStore())
 }

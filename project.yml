@@ -22,6 +22,10 @@ targets:
       properties:
         UILaunchScreen: {}
         CFBundleDisplayName: MyApp
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.echimine.MyApp

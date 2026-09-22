@@ -1,16 +1,45 @@
 import SwiftUI
 
 struct MyListView: View {
-    let items: [MyListItem]
+    @Environment(MyListStore.self) private var myList
+
+    private let columns = [
+        GridItem(.adaptive(minimum: 103), spacing: 8)
+    ]
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 16) {
-                ForEach(items) { item in
-                    MyListCard(item: item)
+        Group {
+            if myList.movies.isEmpty {
+                ContentUnavailableView(
+                    "Your list is empty",
+                    systemImage: "plus.rectangle.on.rectangle",
+                    description: Text("Add movies and shows to watch them later.")
+                )
+            } else {
+                ScrollView {
+                    LazyVGrid(columns: columns, spacing: 16) {
+                        ForEach(myList.movies) { movie in
+                            NavigationLink {
+                                MovieDetailView(movie: movie)
+                            } label: {
+                                VStack(alignment: .leading, spacing: 4) {
+                                    Image(movie.imageName)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(height: 58)
+                                        .clipShape(RoundedRectangle(cornerRadius: 2, style: .continuous))
+
+                                    Text(movie.title)
+                                        .font(.caption)
+                                        .foregroundStyle(.white)
+                                        .lineLimit(1)
+                                }
+                            }
+                        }
+                    }
+                    .padding(16)
                 }
             }
-            .padding(16)
         }
         .background(Color.black.ignoresSafeArea())
         .navigationTitle("My List")
@@ -20,26 +49,22 @@ struct MyListView: View {
     }
 }
 
-private struct MyListCard: View {
-    let item: MyListItem
-
-    var body: some View {
-        HStack(spacing: 3) {
-            ForEach(item.thumbnailNames, id: \.self) { name in
-                Image(name)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(height: 161)
-                    .clipped()
-            }
-        }
-        .clipShape(RoundedRectangle(cornerRadius: 2, style: .continuous))
+#Preview("Empty") {
+    NavigationStack {
+        MyListView()
     }
+    .environment(MyListStore())
+    .preferredColorScheme(.dark)
 }
 
-#Preview {
-    NavigationStack {
-        MyListView(items: MyListItem.sampleItems)
+#Preview("With movies") {
+    let store = MyListStore()
+    for movie in Movie.catalog.prefix(5) {
+        store.toggle(movie)
     }
+    return NavigationStack {
+        MyListView()
+    }
+    .environment(store)
     .preferredColorScheme(.dark)
 }

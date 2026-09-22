@@ -2,6 +2,10 @@ import SwiftUI
 
 struct HomeHero: View {
     var showsHeader = false
+    @Environment(MyListStore.self) private var myList
+    @State private var isPlayerPresented = false
+
+    private var featured: Movie { Movie.named("Barbarians") }
 
     var body: some View {
         ZStack(alignment: .top) {
@@ -24,15 +28,19 @@ struct HomeHero: View {
                         .foregroundStyle(.white)
 
                     HStack(spacing: 24) {
-                        VStack(spacing: 4) {
-                            Image(systemName: "plus")
-                            Text("My List")
-                                .font(.caption2)
+                        Button {
+                            myList.toggle(featured)
+                        } label: {
+                            VStack(spacing: 4) {
+                                Image(systemName: myList.contains(featured) ? "checkmark" : "plus")
+                                Text("My List")
+                                    .font(.caption2)
+                            }
+                            .foregroundStyle(.white)
                         }
-                        .foregroundStyle(.white)
 
                         Button {
-                            // Lecture à implémenter
+                            isPlayerPresented = true
                         } label: {
                             Label("Play", systemImage: "play.fill")
                                 .font(.system(size: 20, weight: .semibold))
@@ -43,12 +51,16 @@ struct HomeHero: View {
                                 .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
                         }
 
-                        VStack(spacing: 4) {
-                            Image(systemName: "info.circle")
-                            Text("Info")
-                                .font(.caption2)
+                        NavigationLink {
+                            MovieDetailView(movie: featured)
+                        } label: {
+                            VStack(spacing: 4) {
+                                Image(systemName: "info.circle")
+                                Text("Info")
+                                    .font(.caption2)
+                            }
+                            .foregroundStyle(.white)
                         }
-                        .foregroundStyle(.white)
                     }
                 }
                 .padding(.bottom, 16)
@@ -62,14 +74,21 @@ struct HomeHero: View {
         .frame(height: 415)
         .containerRelativeFrame(.horizontal)
         .clipped()
+        .fullScreenCover(isPresented: $isPlayerPresented) {
+            PlayerView(movie: featured)
+        }
     }
 }
 
 #Preview {
-    ZStack {
-        Color.black.ignoresSafeArea()
-        HomeHero()
+    NavigationStack {
+        ZStack {
+            Color.black.ignoresSafeArea()
+            HomeHero()
+        }
     }
+    .environment(MyListStore())
+    .preferredColorScheme(.dark)
 }
 
 #Preview("Home (with header)") {
@@ -79,5 +98,6 @@ struct HomeHero: View {
             HomeHero(showsHeader: true)
         }
     }
+    .environment(MyListStore())
     .preferredColorScheme(.dark)
 }

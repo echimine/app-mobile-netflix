@@ -9,13 +9,13 @@ struct HomeHeader: View {
                 .frame(width: 28)
 
             NavigationLink("TV Shows") {
-                CategoryGridView(rows: MediaRow.sampleRows)
+                CategoryGridView(rows: MovieRow.homeRows)
             }
             NavigationLink("Movies") {
-                CategoryGridView(rows: MediaRow.sampleRows)
+                CategoryGridView(rows: MovieRow.homeRows)
             }
             NavigationLink("My List") {
-                MyListView(items: MyListItem.sampleItems)
+                MyListView()
             }
         }
         .font(.subheadline)
@@ -35,5 +35,6 @@ struct HomeHeader: View {
             }
         }
     }
+    .environment(MyListStore())
     .preferredColorScheme(.dark)
 }
