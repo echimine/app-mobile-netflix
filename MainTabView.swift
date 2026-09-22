@@ -1,17 +1,19 @@
 import SwiftUI
 
 struct MainTabView: View {
+    let profile: Profile
+
     var body: some View {
         TabView {
             NavigationStack {
-                HomeView(rows: MovieRow.homeRows)
+                HomeView(rows: MovieRow.homeRows(for: profile.name))
             }
             .tabItem {
                 Label("Home", systemImage: "house")
             }
 
             NavigationStack {
-                SearchView(results: SearchResult.topSearches)
+                SearchView()
             }
             .tabItem {
                 Label("Search", systemImage: "magnifyingglass")
@@ -44,6 +46,6 @@ struct MainTabView: View {
 }
 
 #Preview {
-    MainTabView()
+    MainTabView(profile: Profile.sampleProfiles[0])
         .environment(MyListStore())
 }

@@ -2,10 +2,12 @@ import SwiftUI
 
 struct ProfileSelectionView: View {
     let profiles: [Profile]
+    var onSelect: (Profile) -> Void = { _ in }
     @State private var isEditing: Bool
 
-    init(profiles: [Profile], isEditing: Bool = false) {
+    init(profiles: [Profile], isEditing: Bool = false, onSelect: @escaping (Profile) -> Void = { _ in }) {
         self.profiles = profiles
+        self.onSelect = onSelect
         self._isEditing = State(initialValue: isEditing)
     }
 
@@ -30,7 +32,9 @@ struct ProfileSelectionView: View {
 
                 LazyVGrid(columns: columns, spacing: 40) {
                     ForEach(profiles) { profile in
-                        ProfileTile(profile: profile, isEditing: isEditing)
+                        ProfileTile(profile: profile, isEditing: isEditing) {
+                            onSelect(profile)
+                        }
                     }
                 }
                 .padding(.horizontal, 37)
@@ -70,14 +74,13 @@ struct ProfileSelectionView: View {
 private struct ProfileTile: View {
     let profile: Profile
     let isEditing: Bool
+    let onSelect: () -> Void
 
     var body: some View {
         if isEditing {
             content
         } else {
-            NavigationLink {
-                MainTabView()
-            } label: {
+            Button(action: onSelect) {
                 content
             }
         }

@@ -21,34 +21,34 @@ struct MovieRow: Identifiable, Hashable {
 extension Movie {
     static let catalog: [Movie] = [
         Movie(title: "Barbarians", imageName: "poster-popular-1"),
-        Movie(title: "Before 30", imageName: "poster-popular-2"),
-        Movie(title: "Lionheart", imageName: "poster-popular-3"),
-        Movie(title: "The Millions", imageName: "poster-popular-4"),
-        Movie(title: "Citation", imageName: "poster-popular-5"),
-        Movie(title: "The Queen's Gambit", imageName: "trending-1"),
-        Movie(title: "Kiss Daniel", imageName: "trending-2"),
-        Movie(title: "The Wedding Party", imageName: "trending-3"),
-        Movie(title: "King of Boys", imageName: "trending-4"),
-        Movie(title: "Sugar Rush", imageName: "trending-5"),
-        Movie(title: "Shaft", imageName: "top10-1"),
-        Movie(title: "Chief Daddy", imageName: "top10-2"),
-        Movie(title: "Fifty", imageName: "top10-3"),
-        Movie(title: "Isoken", imageName: "top10-4"),
-        Movie(title: "Ojukokoro", imageName: "top10-5"),
-        Movie(title: "Oloture", imageName: "african-1"),
-        Movie(title: "The Set Up", imageName: "african-2"),
-        Movie(title: "Living in Bondage", imageName: "african-3"),
-        Movie(title: "Namaste Wahala", imageName: "african-4"),
-        Movie(title: "Òlòtūré", imageName: "nollywood-1"),
-        Movie(title: "Òmó Ghetto", imageName: "nollywood-2"),
-        Movie(title: "Rattlesnake", imageName: "nollywood-3"),
-        Movie(title: "Ozark", imageName: "watch-again-1"),
-        Movie(title: "Breaking Bad", imageName: "watch-again-2"),
-        Movie(title: "Your Excellency", imageName: "new-release-1"),
-        Movie(title: "The Governor", imageName: "new-release-2"),
-        Movie(title: "Castle & Castle", imageName: "original-1"),
-        Movie(title: "Peaky Blinders", imageName: "original-2"),
-        Movie(title: "El Chapo", imageName: "original-3"),
+        Movie(title: "Lucifer", imageName: "poster-popular-2"),
+        Movie(title: "Before 30", imageName: "poster-popular-3"),
+        Movie(title: "Òlòtūré", imageName: "poster-popular-4"),
+        Movie(title: "The Million$", imageName: "poster-popular-5"),
+        Movie(title: "The Princess Switch", imageName: "trending-1"),
+        Movie(title: "Vikings", imageName: "trending-2"),
+        Movie(title: "The Last Kingdom", imageName: "trending-3"),
+        Movie(title: "Coming from Insanity", imageName: "trending-4"),
+        Movie(title: "Shooter", imageName: "trending-5"),
+        Movie(title: "Before 30", imageName: "top10-1"),
+        Movie(title: "Mosul", imageName: "top10-2"),
+        Movie(title: "King of Boys", imageName: "top10-3"),
+        Movie(title: "The Beast", imageName: "top10-4"),
+        Movie(title: "Unauthorized Living", imageName: "top10-5"),
+        Movie(title: "Lucifer", imageName: "african-1"),
+        Movie(title: "Blood & Water", imageName: "african-2"),
+        Movie(title: "Merry Men 2", imageName: "african-3"),
+        Movie(title: "A Fall from Grace", imageName: "african-4"),
+        Movie(title: "Prison Break", imageName: "nollywood-1"),
+        Movie(title: "Greenleaf", imageName: "nollywood-2"),
+        Movie(title: "Suits", imageName: "nollywood-3"),
+        Movie(title: "The Big Bang Theory", imageName: "watch-again-1"),
+        Movie(title: "Sugar Rush", imageName: "watch-again-2"),
+        Movie(title: "Living in Bondage", imageName: "new-release-1"),
+        Movie(title: "Queen of the South", imageName: "new-release-2"),
+        Movie(title: "The Fresh Prince of Bel-Air", imageName: "original-1"),
+        Movie(title: "Kasanova", imageName: "original-2"),
+        Movie(title: "Extraction", imageName: "original-3"),
     ]
 
     static func named(_ title: String) -> Movie {
@@ -61,6 +61,12 @@ extension MovieRow {
         names.compactMap { name in
             Movie.catalog.first { $0.imageName == name }
         }
+    }
+
+    static func homeRows(for profileName: String) -> [MovieRow] {
+        [MovieRow(title: "Continue Watching for \(profileName)", movies: movies([
+            "watch-again-1", "watch-again-2", "trending-2", "nollywood-3",
+        ]))] + homeRows
     }
 
     static let homeRows: [MovieRow] = [

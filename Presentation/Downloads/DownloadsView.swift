@@ -39,8 +39,8 @@ struct DownloadsView: View {
                             .foregroundStyle(.white)
                     }
 
-                Button {
-                    // Navigation vers le catalogue à implémenter
+                NavigationLink {
+                    SearchView()
                 } label: {
                     Text("Find Something to Download")
                         .font(.system(size: 16, weight: .bold))
@@ -61,5 +61,6 @@ struct DownloadsView: View {
     NavigationStack {
         DownloadsView()
     }
+    .environment(MyListStore())
     .preferredColorScheme(.dark)
 }

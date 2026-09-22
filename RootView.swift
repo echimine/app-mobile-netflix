@@ -1,18 +1,23 @@
 import SwiftUI
 
 struct RootView: View {
-    @State private var isActive = false
+    @State private var isSplashDone = false
+    @State private var selectedProfile: Profile?
 
     var body: some View {
-        if isActive {
+        if let selectedProfile {
+            MainTabView(profile: selectedProfile)
+        } else if isSplashDone {
             NavigationStack {
-                ProfileSelectionView(profiles: Profile.sampleProfiles)
+                ProfileSelectionView(profiles: Profile.sampleProfiles) { profile in
+                    selectedProfile = profile
+                }
             }
         } else {
             SplashScreenView()
                 .task {
                     try? await Task.sleep(for: .seconds(2))
-                    isActive = true
+                    isSplashDone = true
                 }
         }
     }
@@ -20,4 +25,5 @@ struct RootView: View {
 
 #Preview {
     RootView()
+        .environment(MyListStore())
 }
