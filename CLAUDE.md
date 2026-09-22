@@ -30,3 +30,13 @@ xcodebuild -project MyApp.xcodeproj -scheme MyApp -destination 'generic/platform
 To run on a physical iPhone: open `MyApp.xcodeproj` in Xcode, select your iPhone as the run destination, set a Development Team under the MyApp target's Signing & Capabilities tab (`project.yml` currently leaves `DEVELOPMENT_TEAM` empty), and Run (⌘R). The first launch on-device requires trusting the developer certificate on the iPhone (Réglages > Général > VPN et gestion de l'appareil).
 
 There is no test target yet.
+
+## Design (Figma)
+
+Pour toute intégration de design Figma dans ce projet, utiliser le MCP **framelink-figma** (`framelink-figma`) plutôt que le MCP `claude.ai Figma`.
+
+## Architecture Decision Records
+
+Les décisions techniques du projet sont documentées dans `docs/adr/` (voir
+`docs/adr/README.md` pour le format). Notamment [ADR-0001](docs/adr/0001-preview-macro-pour-chaque-ecran.md) :
+chaque écran SwiftUI doit avoir un bloc `#Preview` dans son fichier.

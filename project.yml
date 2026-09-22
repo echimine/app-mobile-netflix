@@ -12,7 +12,9 @@ targets:
     deploymentTarget: "18.0"
     sources:
       - path: MyApp.swift
+      - path: RootView.swift
       - path: ContentView.swift
+      - path: SplashScreenView.swift
       - path: Assets.xcassets
     info:
       path: Info.plist
