@@ -4,6 +4,37 @@ struct HomeView: View {
     let rows: [MediaRow]
 
     var body: some View {
+        CategoryGridView(rows: rows)
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    HStack(spacing: 20) {
+                        Image("NetflixLogo")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 28)
+
+                        NavigationLink("TV Shows") {
+                            CategoryGridView(rows: MediaRow.sampleRows)
+                        }
+                        NavigationLink("Movies") {
+                            CategoryGridView(rows: MediaRow.sampleRows)
+                        }
+                        NavigationLink("My List") {
+                            MyListView(items: MyListItem.sampleItems)
+                        }
+                    }
+                    .font(.subheadline)
+                    .foregroundStyle(.white)
+                    .tint(.white)
+                }
+            }
+    }
+}
+
+struct CategoryGridView: View {
+    let rows: [MediaRow]
+
+    var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
                 heroSection
@@ -17,22 +48,6 @@ struct HomeView: View {
         .background(Color.black.ignoresSafeArea())
         .toolbarBackground(.black, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
-        .toolbar {
-            ToolbarItem(placement: .principal) {
-                HStack(spacing: 20) {
-                    Image("NetflixLogo")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 28)
-
-                    Text("TV Shows")
-                    Text("Movies")
-                    Text("My List")
-                }
-                .font(.subheadline)
-                .foregroundStyle(.white)
-            }
-        }
     }
 
     private var heroSection: some View {
@@ -91,6 +106,13 @@ struct HomeView: View {
 #Preview {
     NavigationStack {
         HomeView(rows: MediaRow.sampleRows)
+    }
+    .preferredColorScheme(.dark)
+}
+
+#Preview("Category") {
+    NavigationStack {
+        CategoryGridView(rows: MediaRow.sampleRows)
     }
     .preferredColorScheme(.dark)
 }

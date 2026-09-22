@@ -22,6 +22,8 @@ targets:
       - path: HomeView.swift
       - path: SearchResult.swift
       - path: SearchView.swift
+      - path: MyListItem.swift
+      - path: MyListView.swift
       - path: MainTabView.swift
       - path: DesignSystem.swift
       - path: DesignSystem+Color.swift
