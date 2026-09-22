@@ -1,11 +1,10 @@
 import SwiftUI
 
 struct HomeHero: View {
-    var showsBackButton = false
-    @Environment(\.dismiss) private var dismiss
+    var showsHeader = false
 
     var body: some View {
-        ZStack(alignment: .topLeading) {
+        ZStack(alignment: .top) {
             ZStack(alignment: .bottom) {
                 Image("hero-banner")
                     .resizable()
@@ -26,6 +25,13 @@ struct HomeHero: View {
                         .foregroundStyle(.white)
 
                     HStack(spacing: 24) {
+                        VStack(spacing: 4) {
+                            Image(systemName: "plus")
+                            Text("My List")
+                                .font(.caption2)
+                        }
+                        .foregroundStyle(.white)
+
                         Button {
                             // Lecture à implémenter
                         } label: {
@@ -34,16 +40,9 @@ struct HomeHero: View {
                                 .foregroundStyle(.black)
                                 .padding(.horizontal, 24)
                                 .padding(.vertical, 8)
-                                .background(Color.white)
+                                .background(Color(white: 0.85))
                                 .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
                         }
-
-                        VStack(spacing: 4) {
-                            Image(systemName: "plus")
-                            Text("My List")
-                                .font(.caption2)
-                        }
-                        .foregroundStyle(.white)
 
                         VStack(spacing: 4) {
                             Image(systemName: "info.circle")
@@ -56,18 +55,9 @@ struct HomeHero: View {
                 .padding(.bottom, 16)
             }
 
-            if showsBackButton {
-                Button {
-                    dismiss()
-                } label: {
-                    Image(systemName: "chevron.left")
-                        .font(.system(size: 16, weight: .semibold))
-                        .foregroundStyle(.white)
-                        .frame(width: 36, height: 36)
-                        .background(.black.opacity(0.5), in: Circle())
-                }
-                .padding(.leading, 16)
-                .padding(.top, 8)
+            if showsHeader {
+                HomeHeader()
+                    .padding(.top, 8)
             }
         }
     }
@@ -80,9 +70,12 @@ struct HomeHero: View {
     }
 }
 
-#Preview("With back button") {
-    ZStack {
-        Color.black.ignoresSafeArea()
-        HomeHero(showsBackButton: true)
+#Preview("Home (with header)") {
+    NavigationStack {
+        ZStack {
+            Color.black.ignoresSafeArea()
+            HomeHero(showsHeader: true)
+        }
     }
+    .preferredColorScheme(.dark)
 }

@@ -4,23 +4,19 @@ struct HomeView: View {
     let rows: [MediaRow]
 
     var body: some View {
-        CategoryGridView(rows: rows, showsHeroBackButton: true)
-            .toolbar {
-                ToolbarItem(placement: .principal) {
-                    HomeHeader()
-                }
-            }
+        CategoryGridView(rows: rows, showsHeroHeader: true)
+            .toolbar(.hidden, for: .navigationBar)
     }
 }
 
 struct CategoryGridView: View {
     let rows: [MediaRow]
-    var showsHeroBackButton = false
+    var showsHeroHeader = false
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
-                HomeHero(showsBackButton: showsHeroBackButton)
+                HomeHero(showsHeader: showsHeroHeader)
 
                 ForEach(rows) { row in
                     MediaRowView(row: row)
@@ -29,8 +25,6 @@ struct CategoryGridView: View {
             .padding(.bottom, 24)
         }
         .background(Color.black.ignoresSafeArea())
-        .toolbarBackground(.black, for: .navigationBar)
-        .toolbarBackground(.visible, for: .navigationBar)
     }
 }
 
