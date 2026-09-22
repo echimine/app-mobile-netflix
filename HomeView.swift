@@ -4,7 +4,7 @@ struct HomeView: View {
     let rows: [MediaRow]
 
     var body: some View {
-        CategoryGridView(rows: rows)
+        CategoryGridView(rows: rows, showsHeroBackButton: true)
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     HomeHeader()
@@ -15,11 +15,12 @@ struct HomeView: View {
 
 struct CategoryGridView: View {
     let rows: [MediaRow]
+    var showsHeroBackButton = false
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
-                HomeHero()
+                HomeHero(showsBackButton: showsHeroBackButton)
 
                 ForEach(rows) { row in
                     MediaRowView(row: row)
