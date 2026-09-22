@@ -21,12 +21,14 @@
 		96EBC54E7F23478B62BF5D45 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2D47472F06E16691C773C5 /* SearchResult.swift */; };
 		9876E3ABFAFC20EF2D55B3B2 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF97A8F4F0B5D463DAF81339 /* RootView.swift */; };
 		9B2314BD9928E8BD15AFD7F9 /* MediaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4799F61459CE86131B3AC6AD /* MediaItem.swift */; };
+		AD6B532636EE9EDDF4F6A1E7 /* HomeHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B05530921ED25D76BF4513 /* HomeHero.swift */; };
 		B6BA95F9FA81DC66848DA8D0 /* MyListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EC24E7427675AAEAA6F5BD /* MyListItem.swift */; };
 		C6C2F2F846B8714BCBBF9C99 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B24B1D56D777DD6BD8E486 /* DesignSystem.swift */; };
 		C91BC84CF8B1EBFCB542055B /* DesignSystem+Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8236CE02AC9BA15682ADE4E2 /* DesignSystem+Typography.swift */; };
 		D6D2708258D0734A462618C8 /* ComingSoonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB13CD7C2BF880D285A31D1 /* ComingSoonView.swift */; };
 		D83956B9897FFFBF362D8744 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2FAE7517A8B9968B19C435 /* SplashScreenView.swift */; };
 		DA5E4BB876F4BCFB59FB112D /* ComingSoonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F10A6C0732E76DF3283052 /* ComingSoonItem.swift */; };
+		E0276C5E9CF77FB794FD3004 /* HomeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8526B253D01D82DFB6DCDDB1 /* HomeHeader.swift */; };
 		E74CC7AEFC81F306BB7062CD /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8A8D4A9240ED235974AF4E /* PrimaryButtonStyle.swift */; };
 		ECA3DAD2B7E761D426FB8EC4 /* MediaRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C123E03EAA0F8FBE3B2E6AD /* MediaRowView.swift */; };
 		FB3E9FE24A2AA856EA97E11F /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E99CC57F7A9771C44EA404B /* MoreView.swift */; };
@@ -45,9 +47,11 @@
 		55EC24E7427675AAEAA6F5BD /* MyListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListItem.swift; sourceTree = "<group>"; };
 		67F10A6C0732E76DF3283052 /* ComingSoonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonItem.swift; sourceTree = "<group>"; };
 		8236CE02AC9BA15682ADE4E2 /* DesignSystem+Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignSystem+Typography.swift"; sourceTree = "<group>"; };
+		8526B253D01D82DFB6DCDDB1 /* HomeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeader.swift; sourceTree = "<group>"; };
 		87F7DCFB007A6D20710D3EE2 /* DownloadsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsView.swift; sourceTree = "<group>"; };
 		8C123E03EAA0F8FBE3B2E6AD /* MediaRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaRowView.swift; sourceTree = "<group>"; };
 		9440E9B82AD21C93D9CA3913 /* DesignSystem+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DesignSystem+Color.swift"; sourceTree = "<group>"; };
+		94B05530921ED25D76BF4513 /* HomeHero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHero.swift; sourceTree = "<group>"; };
 		9A2D47472F06E16691C773C5 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		9C335956DCE3CFFA74F2665F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9F2FAE7517A8B9968B19C435 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
@@ -71,6 +75,8 @@
 				9440E9B82AD21C93D9CA3913 /* DesignSystem+Color.swift */,
 				8236CE02AC9BA15682ADE4E2 /* DesignSystem+Typography.swift */,
 				87F7DCFB007A6D20710D3EE2 /* DownloadsView.swift */,
+				8526B253D01D82DFB6DCDDB1 /* HomeHeader.swift */,
+				94B05530921ED25D76BF4513 /* HomeHero.swift */,
 				1E02FA57447268EA12BB2586 /* HomeView.swift */,
 				D6E509168C1D4568CB4CC8A9 /* MainTabView.swift */,
 				4799F61459CE86131B3AC6AD /* MediaItem.swift */,
@@ -176,6 +182,8 @@
 				C91BC84CF8B1EBFCB542055B /* DesignSystem+Typography.swift in Sources */,
 				C6C2F2F846B8714BCBBF9C99 /* DesignSystem.swift in Sources */,
 				3C7457D2236DF3C2111BD7C1 /* DownloadsView.swift in Sources */,
+				E0276C5E9CF77FB794FD3004 /* HomeHeader.swift in Sources */,
+				AD6B532636EE9EDDF4F6A1E7 /* HomeHero.swift in Sources */,
 				7BB267009CF793F121B02ADA /* HomeView.swift in Sources */,
 				2E0E4B8E7372C5946197C39F /* MainTabView.swift in Sources */,
 				9B2314BD9928E8BD15AFD7F9 /* MediaItem.swift in Sources */,
