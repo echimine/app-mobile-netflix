@@ -1,0 +1,26 @@
+name: MyApp
+options:
+  bundleIdPrefix: com.echimine
+settings:
+  base:
+    DEVELOPMENT_TEAM: ""
+    CODE_SIGN_STYLE: Automatic
+targets:
+  MyApp:
+    type: application
+    platform: iOS
+    deploymentTarget: "18.0"
+    sources:
+      - path: MyApp.swift
+      - path: ContentView.swift
+      - path: Assets.xcassets
+    info:
+      path: Info.plist
+      properties:
+        UILaunchScreen: {}
+        CFBundleDisplayName: MyApp
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.echimine.MyApp
+        TARGETED_DEVICE_FAMILY: "1"
+        SWIFT_VERSION: "5.0"
